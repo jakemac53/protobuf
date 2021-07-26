@@ -1,0 +1,24 @@
+targets:
+  $default:
+    sources:
+      - protos/**
+      - $package$
+      - lib/**
+    builders:
+      :protobuf_builder:
+        enabled: True
+
+builders:
+  protobuf_builder:
+    import: "package:protobuf_builder/protobuf_builder.dart"
+    builder_factories:
+      - protobufBuilder
+    build_extensions:
+      ^protos/{{}}.proto:
+        - lib/{{}}.pb.dart
+    defaults:
+      generate_for:
+        - protos/**.proto
+    is_optional: False
+    build_to: source
+    auto_apply: dependents
