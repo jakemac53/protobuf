@@ -1,3 +1,7 @@
+## 2.0.0
+
+* Stable null safety release.
+
 ## 1.1.4
 
 *   Fix comparison of empty lists from frozen messages.
